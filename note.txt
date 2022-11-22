@@ -1,0 +1,2 @@
+Note
+    - buat seeder for setting
