@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Actions\Web\GetListNews;
+namespace App\Actions\Web\GetListNewsCategoryId;
 
 use Storage;
 use App\Models\News;
 
 class Handler
 {
-    public function handle()
+    public function handle($categoryId)
     {
         $result = [];
 
-        $news = News::with(['news_category'])->where('is_enabled', 'yes')->paginate(15);
+        $news = News::whereHas('news_category', function($q) use ($categoryId) {
+            $q->where('id', $categoryId);
+         })->where('is_enabled', 'yes')->paginate(15);
 
         if ($news->total() > 0) {
             foreach ($news->items() as $item) {

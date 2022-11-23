@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('news', \App\Http\Controllers\Front\NewsController::class)->middleware('caching.data.setting');
+Route::group(['prefix' => 'news', 'as' => 'news.', 'middleware' => ['caching.data.setting']], function() {
+    Route::prefix('get')->group(function () {
+        Route::get('{categoryId}/category', [App\Http\Controllers\Front\NewsController::class, 'category'])->name('get.category');
+    });
+});
 Route::resource('emagazines', \App\Http\Controllers\Front\EmagazineController::class)->middleware('caching.data.setting');
 Route::get('contact', [App\Http\Controllers\Front\ContactController::class, 'index'])->name('contact')->middleware('caching.data.setting');
 Route::get('gallery', [App\Http\Controllers\Front\GalleryController::class, 'index'])->name('gallery')->middleware('caching.data.setting');

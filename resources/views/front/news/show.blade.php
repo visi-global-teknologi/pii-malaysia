@@ -38,7 +38,7 @@
                             @if (count($data['news_category']) > 0)
                             <ul class="mt-3">
                                     @foreach ($data['news_category'] as $item)
-                                        <li><a href="#">{{ ucwords($item['name']) }} <span>({{ $item['total'] }})</span></a></li>
+                                        <li><a href="{{ route('news.get.category', $item['id']) }}">{{ ucwords($item['name']) }} <span>({{ $item['total'] }})</span></a></li>
                                     @endforeach
                                 </ul>
                             @endif
