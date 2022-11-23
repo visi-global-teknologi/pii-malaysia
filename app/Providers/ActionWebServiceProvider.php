@@ -32,6 +32,11 @@ class ActionWebServiceProvider extends ServiceProvider
             'app.action.web.get-list-news-limit-six',
             \App\Actions\Web\GetListNewsLimitSix\Handler::class
         );
+
+        $this->app->bind(
+            'app.action.web.get-detail-emagazine',
+            \App\Actions\Web\GetDetailEmagazine\Handler::class
+        );
     }
 
     /**
