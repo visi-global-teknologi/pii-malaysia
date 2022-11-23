@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h1 style="color: #fff">{{ strtoupper(config('app.name')) }}</h1>
+                    {{-- <h1 style="color: #fff">{{ strtoupper(config('app.name')) }}</h1> --}}
                 </div>
             </div>
         </div>

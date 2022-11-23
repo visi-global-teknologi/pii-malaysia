@@ -25,7 +25,6 @@ class HomepageController extends Controller
         $data['homepage_lists_member'] = app('app.action.web.get-list-member')->handle();
         $data['homepage_lists_emagazine_limit_six'] = app('app.action.web.get-list-emagazine-limit-six')->handle();
         $data['homepage_lists_news_limit_six'] = app('app.action.web.get-list-news-limit-six')->handle();
-        // dd($data);
 
         return view('homepage.index', compact('data'));
     }
