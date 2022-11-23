@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use Cache;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,6 +22,8 @@ class GalleryController extends Controller
             }
         }
 
-        $data['homepage_lists_gallery'] = app('app.action.web.get-list-gallery')->handle();
+        $data['list_gallery'] = app('app.action.web.get-list-gallery')->handle();
+
+        return view('front.gallery.index', compact('data'));
     }
 }
