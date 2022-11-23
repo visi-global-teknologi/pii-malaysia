@@ -22,7 +22,8 @@ class ContactController extends Controller
                         $removeTagHtml = strip_tags($value['value']);
                         $data['homepage_lists_contact'][$value['key']] = $removeTagHtml;
                     } else {
-                        $data['contact_lists'][$value['key']] = $value['value'];
+                        $data['homepage_lists_contact'][$value['key']] = $value['value'];
+
                     }
                 }
             }
