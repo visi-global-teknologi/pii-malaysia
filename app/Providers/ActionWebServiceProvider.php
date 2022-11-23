@@ -42,6 +42,16 @@ class ActionWebServiceProvider extends ServiceProvider
             'app.action.web.get-list-gallery',
             \App\Actions\Web\GetListGallery\Handler::class
         );
+
+        $this->app->bind(
+            'app.action.web.get-detail-news',
+            \App\Actions\Web\GetDetailNews\Handler::class
+        );
+
+        $this->app->bind(
+            'app.action.web.get-list-news-category',
+            \App\Actions\Web\GetListNewsCategory\Handler::class
+        );
     }
 
     /**
