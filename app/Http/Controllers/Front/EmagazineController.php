@@ -15,7 +15,23 @@ class EmagazineController extends Controller
      */
     public function index()
     {
-        //
+        $data = [];
+
+        if (Cache::has('setting')) {
+            $settingCache = Cache::get('setting');
+            $settingArray = json_decode($settingCache, true);
+            if (count($settingArray) > 0) {
+                foreach ($settingArray as $key => $value) {
+                    $data['homepage_lists_contact'][$value['key']] = $value['value'];
+                }
+            }
+        }
+
+        $data['homepage_lists_emagazine'] = app('app.action.web.get-list-emagazine')->handle();
+        $emagazine = $data['homepage_lists_emagazine']['emagazine'];
+        $total = $data['homepage_lists_emagazine']['total'];
+
+        return view('front.emagazine.index', compact('data', 'emagazine', 'total'));
     }
 
     /**

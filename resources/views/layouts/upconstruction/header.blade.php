@@ -11,6 +11,7 @@
                 <li><a href="{{ route('index') }}">Home</a></li>
                 <li><a href="{{ route('gallery') }}">Gallery</a></li>
                 <li><a href="{{ route('news.index') }}">News</a></li>
+                <li><a href="{{ route('emagazines.index') }}">Emagazine</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </nav><!-- .navbar -->
