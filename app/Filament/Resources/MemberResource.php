@@ -38,14 +38,14 @@ class MemberResource extends Resource
                     ->profile('barebone')
                     ->required(),
 
-                FileUpload::make('image')
+                FileUpload::make('photo')
                     ->disk('member')
                     ->image()
                     ->required()
                     ->maxSize(1024)
                     ->visibility('public'),
 
-                Select::make('is_enabled')->required()
+                Select::make('is_active')->required()
                     ->options([
                         'no' => 'No',
                         'yes' => 'Yes'
@@ -60,14 +60,14 @@ class MemberResource extends Resource
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('job')->searchable(),
                 ImageColumn::make('photo')->disk('member')->width(100)->height(100),
-                SelectColumn::make('is_enabled')
+                SelectColumn::make('is_active')
                 ->options([
                     'no' => 'No',
                     'yes' => 'Yes',
                 ]),
             ])
             ->filters([
-                SelectFilter::make('is_enabled')
+                SelectFilter::make('is_active')
                 ->options([
                     'no' => 'No',
                     'yes' => 'Yes',

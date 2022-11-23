@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property string $photo
  * @property string|null $quote
- * @property string $is_enabled
+ * @property string $is_active
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -32,6 +32,6 @@ class Member extends Model
 		'name',
 		'photo',
 		'quote',
-		'is_enabled'
+		'is_active'
 	];
 }

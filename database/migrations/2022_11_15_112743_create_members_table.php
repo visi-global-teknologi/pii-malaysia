@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('photo');
             $table->text('quote')->nullable();
-            $table->enum('is_enabled', ['no', 'yes'])->default('yes');
+            $table->enum('is_active', ['no', 'yes'])->default('yes');
             $table->timestamps();
         });
     }

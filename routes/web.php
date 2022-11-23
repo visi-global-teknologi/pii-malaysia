@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomepageController::class, 'index'])->name('index')->middleware('caching.data.setting');
+Route::resource('emagazines', \App\Http\Controllers\Front\EmagazineController::class);
