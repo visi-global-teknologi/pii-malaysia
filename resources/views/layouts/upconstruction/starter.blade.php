@@ -8,7 +8,7 @@
 </main>
 @endsection
 
-@section('footer')
+@section('bottom')
 @endsection
 
 @section('script')

@@ -15,7 +15,23 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $data = [];
+
+        if (Cache::has('setting')) {
+            $settingCache = Cache::get('setting');
+            $settingArray = json_decode($settingCache, true);
+            if (count($settingArray) > 0) {
+                foreach ($settingArray as $key => $value) {
+                    $data['homepage_lists_contact'][$value['key']] = $value['value'];
+                }
+            }
+        }
+
+        $data['homepage_lists_news'] = app('app.action.web.get-list-news')->handle();
+        $news = $data['homepage_lists_news']['news'];
+        $total = $data['homepage_lists_news']['total'];
+
+        return view('front.news.index', compact('data', 'news', 'total'));
     }
 
     /**
