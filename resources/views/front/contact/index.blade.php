@@ -70,7 +70,7 @@
 </main>
 @endsection
 
-@section('footer')
+@section('bottom')
     @include('layouts.upconstruction.footer', $data)
 @endsection
 

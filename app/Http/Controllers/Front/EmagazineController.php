@@ -54,12 +54,7 @@ class EmagazineController extends Controller
             $settingArray = json_decode($settingCache, true);
             if (count($settingArray) > 0) {
                 foreach ($settingArray as $key => $value) {
-                    if ($value['key'] == 'contact_gmaps') {
-                        $removeTagHtml = strip_tags($value['value']);
-                        $data['homepage_lists_contact'][$value['key']] = $removeTagHtml;
-                    } else {
-                        $data['homepage_lists_contact'][$value['key']] = $value['value'];
-                    }
+                    $data['homepage_lists_contact'][$value['key']] = $value['value'];
                 }
             }
         }

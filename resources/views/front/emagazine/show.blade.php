@@ -41,8 +41,8 @@
 </main>
 @endsection
 
-@section('footer')
-@include('layouts.upconstruction.footer', $data)
+@section('bottom')
+    @include('layouts.upconstruction.footer', $data)
 @endsection
 
 @section('script')
