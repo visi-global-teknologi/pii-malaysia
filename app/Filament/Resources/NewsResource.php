@@ -42,7 +42,12 @@ class NewsResource extends Resource
                 TextInput::make('title')
                     ->required(),
 
-                FileUpload::make('image'),
+                FileUpload::make('image')
+                    ->disk('news')
+                    ->required()
+                    ->image()
+                    ->maxSize(1024)
+                    ->visibility('public'),
 
                 TiptapEditor::make('information')
                     ->profile('barebone')
