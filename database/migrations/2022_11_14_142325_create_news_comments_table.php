@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('comment');
-            $table->datTime('datetime');
+            $table->dateTime('datetime');
             $table->string('website')->nullable();
             $table->unsignedBigInteger('news_id');
             $table->enum('is_read', ['no', 'yes'])->default('yes');
