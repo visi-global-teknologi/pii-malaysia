@@ -36,6 +36,7 @@
                     @endforeach
                 @endif
             </div>
+            <br/>
             {!! $emagazines->links() !!}
         </div>
     </section>
