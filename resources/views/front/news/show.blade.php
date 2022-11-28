@@ -39,7 +39,7 @@
                                     <div class="comment-img"><img src="url('/images/gamer.png')" alt=""></div>
                                     <div>
                                         <h5><a href="">{{ $item['name'] }}</a></h5>
-                                        <time datetime="{{ $item['datetime']->toDateString() }}"></time>
+                                        <time datetime="{{ $item['datetime'] }}"></time>
                                         <p>{{ $item['comment'] }}</p>
                                     </div>
                                 </div>
