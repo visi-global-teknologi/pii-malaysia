@@ -22,7 +22,7 @@ class Handler
                     'title' => $item->title,
                     'description' => $item->description,
                     'url_file' => $item->url_file,
-                    'url_image' => $item->image ? Storage::disk('news')->url($item->image) : null,
+                    'url_image' => $item->image ? Storage::disk('emagazine')->url($item->image) : null,
                     'category' => $item->emagazine_category->name
                 ];
             }
