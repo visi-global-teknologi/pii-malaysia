@@ -32,8 +32,8 @@
                         </div>
                     </article>
                     <div class="comments">
-                        @if (count($news['news_detail']['news_comments']) > 0)
-                            @foreach ($news['news_detail']['news_comments'] as $item)
+                        @if (count($data['news_detail']['news_comments']) > 0)
+                            @foreach ($data['news_detail']['news_comments'] as $item)
                             <div id="comment-{{ $item['id'] }}" class="comment">
                                 <div class="d-flex">
                                     <div class="comment-img"><img src="url('/images/gamer.png')" alt=""></div>
