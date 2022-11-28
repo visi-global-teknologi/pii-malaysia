@@ -13,7 +13,7 @@ class Handler
 
         $emagazine = Emagazine::whereHas('emagazine_category', function($q) use ($categoryId) {
             $q->where('id', $categoryId);
-         })->where('is_enabled', 'yes')->paginate(15);
+         })->where('is_enabled', 'yes')->paginate(3);
 
         if ($emagazine->total() > 0) {
             foreach ($emagazine->items() as $item) {
