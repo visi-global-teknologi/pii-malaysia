@@ -33,7 +33,7 @@
                     <ul>
                         <li>
                             <strong>Category</strong>
-                            <a href="{{ route('emagzines.get.category', $data['emagazine_detail']['emagazine_category_id']) }}">{{ ucwords($data['emagazine_detail']['emagazine_category_name']) }}</a>
+                            <a href="{{ route('emagazines.get.category', $data['emagazine_detail']['emagazine_category_id']) }}">{{ ucwords($data['emagazine_detail']['emagazine_category_name']) }}</a>
                             <span></span>
                         </li>
                         <li><a target="_blank" href="{{ $data['emagazine_detail']['url_file'] }}" class="btn-visit align-self-start">Visit File</a></li>
