@@ -32,7 +32,21 @@
                         </div>
                     </article>
                     <div class="comments">
-                        <h4 class="comments-count">8 Comments</h4>
+                        @if (count($news['news_detail']['news_comments']) > 0)
+                            @foreach ($news['news_detail']['news_comments'] as $item)
+                            <div id="comment-{{ $item['id'] }}" class="comment">
+                                <div class="d-flex">
+                                    <div class="comment-img"><img src="url('/images/gamer.png')" alt=""></div>
+                                    <div>
+                                        <h5><a href="">{{ $item['name'] }}</a></h5>
+                                        <time datetime="{{ $item['datetime']->toDateString() }}"></time>
+                                        <p>{{ $item['comment'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        @endif
+                        <h4 class="comments-count">{{ count($news['news_detail']['news_comments']) }} Comments</h4>
                         <div class="reply-form">
                             <h4>Leave a Reply</h4>
                             {!! Form::open(['route' => ['api.news.comment.store'], 'method' => 'post', 'id' => 'form-comment']) !!}

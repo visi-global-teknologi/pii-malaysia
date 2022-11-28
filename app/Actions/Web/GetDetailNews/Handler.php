@@ -21,7 +21,7 @@ class Handler
                 'information' => $news->information,
                 'news_category_id' => $news->news_category_id,
                 'news_category_name' => $news->news_category->name,
-                'news_comments' => $news->news_comments
+                'news_comments' => $news->news_comments->toArray()
             ];
         }
 
