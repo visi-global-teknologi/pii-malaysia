@@ -12,7 +12,7 @@ class ValidateRequest
             'name' => 'required|max:50',
             'email' => 'required|email|max:50',
             'comment' => 'required|max:250',
-            'website' => 'required|url',
+            'website' => 'nullable|url',
             'news_id' => 'required|exists:news,id',
         ]);
     }

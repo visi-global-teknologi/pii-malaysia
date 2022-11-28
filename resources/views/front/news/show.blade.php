@@ -36,6 +36,7 @@
                         <div class="reply-form">
                             <h4>Leave a Reply</h4>
                             {!! Form::open(['route' => ['api.news.comment.store'], 'method' => 'post', 'id' => 'form-comment']) !!}
+                                <input name="news_id" type="hidden" class="form-control" value="{{ $id }}" >
                                 <div class="row">
                                     <div class="col-md-6 form-group">
                                         <input required name="name" type="text" class="form-control" placeholder="Your Name*">

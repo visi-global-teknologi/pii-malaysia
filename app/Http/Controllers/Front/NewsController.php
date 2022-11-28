@@ -79,7 +79,7 @@ class NewsController extends Controller
         $data['news_detail'] = app('app.action.web.get-detail-news')->handle($id);
         $data['news_category'] = app('app.action.web.get-list-news-category')->handle($id);
 
-        return view('front.news.show', compact('data'));
+        return view('front.news.show', compact('data', 'id'));
     }
 
     /**
