@@ -67,6 +67,11 @@ class ActionWebServiceProvider extends ServiceProvider
             'app.action.web.get-list-emagazine',
             \App\Actions\Web\GetListEmagazine\Handler::class
         );
+
+        $this->app->bind(
+            'app.action.web.get-list-emagazine-category-id',
+            \App\Actions\Web\GetListEmagazineCategoryId\Handler::class
+        );
     }
 
     /**

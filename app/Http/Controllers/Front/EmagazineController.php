@@ -113,4 +113,31 @@ class EmagazineController extends Controller
     {
         //
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $categoryId
+     * @return \Illuminate\Http\Response
+     */
+    public function category($categoryId)
+    {
+        $data = [];
+
+        if (Cache::has('setting')) {
+            $settingCache = Cache::get('setting');
+            $settingArray = json_decode($settingCache, true);
+            if (count($settingArray) > 0) {
+                foreach ($settingArray as $key => $value) {
+                    $data['homepage_lists_contact'][$value['key']] = $value['value'];
+                }
+            }
+        }
+
+        $data['homepage_lists_emagazine_by_category_id'] = app('app.action.web.get-list-emagazine-category-id')->handle($categoryId);
+        $emagazines = $data['homepage_lists_emagazine_by_category_id']['emagazine'];
+        $total = $data['homepage_lists_emagazine_by_category_id']['total'];
+
+        return view('front.emagazine.category', compact('data', 'emagazines', 'total'));
+    }
 }
