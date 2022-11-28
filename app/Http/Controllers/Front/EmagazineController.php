@@ -138,6 +138,7 @@ class EmagazineController extends Controller
         $emagazines = $data['homepage_lists_emagazine_by_category_id']['emagazine'];
         $total = $data['homepage_lists_emagazine_by_category_id']['total'];
 
+        dd($data, $emagazines, $total);
         return view('front.emagazine.category', compact('data', 'emagazines', 'total'));
     }
 }
