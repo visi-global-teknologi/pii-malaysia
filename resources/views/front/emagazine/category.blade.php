@@ -8,6 +8,7 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{ url('upconstruction/assets/img/breadcrumbs-bg.jpg') }});">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>EMAGAZINE</h2>
+            <h1>shbchsvh</h1>
         </div>
     </div>
     <section id="blog" class="blog">

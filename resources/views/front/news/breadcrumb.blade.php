@@ -3,6 +3,7 @@
         <h2>News Detail</h2>
         <ol>
             <li>{{ ucwords($data['news_detail']['title']) }}</li>
+            <li>Blog</li>
         </ol>
     </div>
 </div>

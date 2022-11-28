@@ -37,6 +37,7 @@
                     @endforeach
                 @endif
             </div>
+            <br/>
             {!! $news->links() !!}
         </div>
     </section>
