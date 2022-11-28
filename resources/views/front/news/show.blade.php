@@ -36,7 +36,7 @@
                             @foreach ($data['news_detail']['news_comments'] as $item)
                             <div id="comment-{{ $item['id'] }}" class="comment">
                                 <div class="d-flex">
-                                    <div class="comment-img"><img src="url('/images/gamer.png')" alt=""></div>
+                                    <div class="comment-img"><img src="{{ url('/images/gamer.png') }}" alt=""></div>
                                     <div>
                                         <h5><a href="">{{ $item['name'] }}</a></h5>
                                         <time datetime="{{ $item['datetime'] }}"></time>
