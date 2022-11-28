@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use Cache;
 use Illuminate\Http\Request;
+use App\Models\EmagazineCategory;
 use App\Http\Controllers\Controller;
 
 class EmagazineController extends Controller
@@ -137,8 +138,8 @@ class EmagazineController extends Controller
         $data['homepage_lists_emagazine_by_category_id'] = app('app.action.web.get-list-emagazine-category-id')->handle($categoryId);
         $emagazines = $data['homepage_lists_emagazine_by_category_id']['emagazine'];
         $total = $data['homepage_lists_emagazine_by_category_id']['total'];
+        $categoryName = ($total > 0) ? EmagazineCategory::find($categoryId)->name : "";
 
-        dd($data, $emagazines, $total);
-        return view('front.emagazine.category', compact('data', 'emagazines', 'total'));
+        return view('front.emagazine.category', compact('data', 'emagazines', 'total', 'categoryName'));
     }
 }
