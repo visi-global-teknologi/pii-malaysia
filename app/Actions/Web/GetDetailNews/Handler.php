@@ -11,7 +11,7 @@ class Handler
     {
         $result = [];
 
-        $news = News::with(['news_category'])->where('id', $id)->where('is_enabled', 'yes')->first();
+        $news = News::with(['news_category', 'news_comments'])->where('id', $id)->where('is_enabled', 'yes')->first();
         if ($news) {
             $result = [
                 'id' => $news->id,
