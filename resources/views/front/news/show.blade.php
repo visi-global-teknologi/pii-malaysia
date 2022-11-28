@@ -1,6 +1,7 @@
 @extends('layouts.upconstruction.master')
 
 @section('css')
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('libs/sweetalert2/sweetalert2.min.css') }}">
 @endsection
 
 @section('content')
@@ -34,7 +35,7 @@
                         <h4 class="comments-count">8 Comments</h4>
                         <div class="reply-form">
                             <h4>Leave a Reply</h4>
-                            <form action="">
+                            {!! Form::open(['route' => ['api.news.comment.store'], 'method' => 'post', 'id' => 'form-comment']) !!}
                                 <div class="row">
                                     <div class="col-md-6 form-group">
                                         <input required name="name" type="text" class="form-control" placeholder="Your Name*">
@@ -54,7 +55,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Post Comment</button>
-                            </form>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
@@ -83,4 +84,7 @@
 @endsection
 
 @section('script')
+    <script src="{{ URL::asset('libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('libs/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ URL::asset('app/js/store-comment.js') }}"></script>
 @endsection
