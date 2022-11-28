@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use Cache;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -138,7 +139,8 @@ class NewsController extends Controller
         $data['homepage_lists_news_by_category_id'] = app('app.action.web.get-list-news-category-id')->handle($categoryId);
         $news = $data['homepage_lists_news_by_category_id']['news'];
         $total = $data['homepage_lists_news_by_category_id']['total'];
+        $categoryName = ($total > 0) ? NewsCategory::find($categoryId)->name : "";
 
-        return view('front.news.category', compact('data', 'news', 'total', 'categoryId'));
+        return view('front.news.category', compact('data', 'news', 'total', 'categoryId', 'categoryName'));
     }
 }
