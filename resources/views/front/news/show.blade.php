@@ -26,7 +26,7 @@
                         <div class="meta-bottom">
                             <i class="bi bi-tags"></i>
                             <ul class="cats">
-                                <li><a href="{{ route('news.get.category', $data['id']) }}">{{ $data['news_detail']['news_category_name'] }}</a></li>
+                                <li><a href="{{ route('news.get.category', $categoryId) }}">{{ $data['news_detail']['news_category_name'] }}</a></li>
                             </ul>
                         </div>
                     </article>

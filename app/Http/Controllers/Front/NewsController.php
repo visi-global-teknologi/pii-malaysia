@@ -139,6 +139,6 @@ class NewsController extends Controller
         $news = $data['homepage_lists_news_by_category_id']['news'];
         $total = $data['homepage_lists_news_by_category_id']['total'];
 
-        return view('front.news.category', compact('data', 'news', 'total'));
+        return view('front.news.category', compact('data', 'news', 'total', 'categoryId'));
     }
 }
