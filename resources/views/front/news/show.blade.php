@@ -32,6 +32,7 @@
                         </div>
                     </article>
                     <div class="comments">
+                        <h4 class="comments-count">{{ count($data['news_detail']['news_comments']) }} Comments</h4>
                         @if (count($data['news_detail']['news_comments']) > 0)
                             @foreach ($data['news_detail']['news_comments'] as $item)
                             <div id="comment-{{ $item['id'] }}" class="comment">
@@ -46,7 +47,6 @@
                             </div>
                             @endforeach
                         @endif
-                        <h4 class="comments-count">{{ count($data['news_detail']['news_comments']) }} Comments</h4>
                         <div class="reply-form">
                             <h4>Leave a Reply</h4>
                             {!! Form::open(['route' => ['api.news.comment.store'], 'method' => 'post', 'id' => 'form-comment']) !!}
