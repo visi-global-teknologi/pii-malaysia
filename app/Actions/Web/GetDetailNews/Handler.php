@@ -20,7 +20,8 @@ class Handler
                 'url_image' => Storage::disk('news')->url($news->image),
                 'information' => $news->information,
                 'news_category_id' => $news->news_category_id,
-                'news_category_name' => $news->news_category->name
+                'news_category_name' => $news->news_category->name,
+                'news_comments' => $news->news_comments
             ];
         }
 
