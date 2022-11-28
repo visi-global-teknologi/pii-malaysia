@@ -14,7 +14,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 posts-list">
                 @if ($total > 0)
-                    @foreach ($emagazines as $item)
+                    @foreach ($data['homepage_lists_emagazine_by_category_id']['items'] as $item)
                     <div class="col-xl-4 col-md-6">
                         <div class="post-item position-relative h-100">
                             <div class="post-img position-relative overflow-hidden">
