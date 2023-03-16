@@ -3,7 +3,8 @@
         <a href="{{ route('index') }}" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>{{ ucwords(config('app.name')) }}</h1>
+            {{-- <h1>{{ ucwords(config('app.name')) }}</h1> --}}
+            <img src="{{ URL::asset('images/pii_logo.webp') }}" alt="pii_logo">
         </a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i> <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
