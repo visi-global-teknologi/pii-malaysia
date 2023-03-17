@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Hash;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\SelectColumn;
 use Illuminate\Database\Eloquent\Builder;
@@ -31,7 +32,13 @@ class UserResource extends Resource
 
                 TextInput::make('email')->email(),
 
-                Password::make('password')->showIcon('heroicon-o-eye')
+                Password::make('password')->showIcon('heroicon-o-eye'),
+
+                Select::make('is_active')->required()
+                ->options([
+                    'no' => 'No',
+                    'yes' => 'Yes'
+                ]),
             ]);
     }
 
