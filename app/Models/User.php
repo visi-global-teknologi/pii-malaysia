@@ -6,6 +6,7 @@ namespace App\Models;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -47,5 +48,15 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessFilament(): bool
     {
         return true;
+    }
+
+    /**
+     * Interact with the user's password.
+     */
+    protected function password(): Attribute
+    {
+        return Attribute::make(
+            set: fn (string $value) => bcrypt($value),
+        );
     }
 }
