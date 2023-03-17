@@ -32,7 +32,7 @@ class UserResource extends Resource
 
                 TextInput::make('email')->email(),
 
-                Password::make('password')->showIcon('heroicon-o-eye'),
+                TextInput::make('password')->password(),
 
                 Select::make('is_active')->required()
                 ->options([
