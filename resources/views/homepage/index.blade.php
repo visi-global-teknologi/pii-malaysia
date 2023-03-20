@@ -7,7 +7,7 @@
 @include('homepage.slider', $data)
 <main id="main">
     @include('homepage.member', $data)
-    @include('homepage.emagazine', $data)
+    {{-- @include('homepage.emagazine', $data) --}}
     @include('homepage.news', $data)
 </main>
 @endsection
