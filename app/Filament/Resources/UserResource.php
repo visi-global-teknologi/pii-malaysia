@@ -82,4 +82,13 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        if (auth()->user()->email == 'admin@piimalaysia.org') {
+            return true;
+        }
+
+        return false;
+    }
 }

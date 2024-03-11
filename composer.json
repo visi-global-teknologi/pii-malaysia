@@ -17,7 +17,8 @@
         "laravelcollective/html": "^6.3",
         "mehr-it/html-cleaner": "^1.1",
         "opcodesio/log-viewer": "^1.7",
-        "phpsa/filament-password-reveal": "^1.1"
+        "phpsa/filament-password-reveal": "^1.1",
+        "ryangjchandler/filament-profile": "^0.3.0"
     },
     "require-dev": {
         "doctrine/dbal": "^3.5",
